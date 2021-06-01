@@ -31,7 +31,7 @@ static int []p;
 			for(int i=0; i<n; i++) {
 				for(int j=i+1; j<n; j++) {
 					int difx=info[i][0]-info[j][0];
-					int dify=info[i][1]=info[j][1];
+					int dify=info[i][1]-info[j][1];
 					int distance=info[i][2]+info[j][2];
 					
 					if((difx*difx)+(dify*dify)<=distance*distance) {
