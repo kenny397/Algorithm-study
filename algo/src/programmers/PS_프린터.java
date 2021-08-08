@@ -10,22 +10,41 @@ public class PS_프린터 {
 		int l2=0;
 	}
 	 static public int solution(int[] priorities, int location) {
-	        int answer = 0;
-	        Queue<Node> wait=new LinkedList<>();
-	        for(int i=0; i<priorities.length; i++) {
-	        	wait.add(new Node(i,priorities[i]));
+	        int l=priorities.length;
+	        int[]answers=new int[l];
+	        Queue<Node> q=new LinkedList<>();
+	        for(int i=0; i<l; i++){
+	            q.offer(new Node(priorities[i],i));
 	        }
-	        while(wait.isEmpty()) {
-	        	
+	        Arrays.sort(priorities);
+	        int idx=l-1;
+	        int count=1;
+	        while(true){
+	            if(q.isEmpty())break;
+	            if(priorities[idx]==q.peek().value){
+	                idx--;
+	                answers[q.poll().idx]=count++;
+	                continue;
+	            }
+	            
+	             
+	            Node node=q.poll();
+	            q.offer(node);
+	            
 	        }
-	        return answer;
-	  }
-	 static class Node{
-		 int idx;
-		 int value;
-		public Node(int idx, int value) {
-			this.idx = idx;
-			this.value = value;
-		}
-	 }
-}
+	        for(int i : answers){
+	            System.out.println(i);
+	        }
+	        return answers[location];
+	    }
+	    
+	    
+	    static class Node {
+	        int value;
+	        int idx;
+	        Node(int value, int idx){
+	            this.value=value;
+	            this.idx=idx;
+	        }
+	    }
+	}
