@@ -20,20 +20,27 @@ public class C10800 {
 			StringTokenizer st = new StringTokenizer(br.readLine()); 
 			int idx=changeInt(st.nextToken())-1;
 			int size=changeInt(st.nextToken());
-			sumsize[idx]+=size;
+			
 			
 			Ball b=new Ball(i,idx,size);
 			balls[i]=b;
 		}
 		Arrays.sort(balls);
-		for(int j=0; j<n; j++) {
-			for(int i=0; i<n; i++) {
-			if(i==balls[j].color) {
-				sumsize[i]-=balls[j].size;
-			}else {
-				answer[balls[j].number]+=sumsize[i];
+		for(Ball b: balls) {
+			System.out.println(b.number+" "+b.color+" "+b.size);
+		}
+		int sum=0;
+		int j=n-1;
+		for(int i=0; i<n; i++) {
+			Ball a=balls[i];
+			Ball b=balls[j];
+			while(b.size<a.size) {
+				sum+=b.size;
+				sumsize[b.color]+=b.size;
+				b=balls[--j];
 			}
-			}
+			answer[a.number]=sum-sumsize[a.color];
+			
 		}
 		
 		for(int a:answer) {
