@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class SweaFlatten {
+public class Swea_Flatten {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Swea_6808 {
+public class Swea6808 {
 static int win;
 static int lose;
 static int[] cards;

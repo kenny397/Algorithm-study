@@ -2,7 +2,7 @@ package swea;
 
 import java.util.Scanner;
 
-public class SweaLadder1 {
+public class Swea_Ladder1 {
 	static int answer;
 	static int[][]map;
 	static boolean[][]v;

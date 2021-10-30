@@ -3,7 +3,7 @@ package swea;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Swea_0805ws {
+public class Swea0805 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

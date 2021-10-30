@@ -7,7 +7,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Swea_1226 {
+public class Swea1226 {
 static int[][] map;
 static int endx;
 static int endy;

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Jungol_1681 {
+public class Jungol1681 {
 static int n;
 static boolean[]v;
 static int[][]map;

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Jingol_1828 {
+public class Jungol1828 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub

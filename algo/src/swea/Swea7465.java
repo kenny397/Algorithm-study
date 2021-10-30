@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Swea_7465 {
+public class Swea7465 {
 static int[] parent;
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub

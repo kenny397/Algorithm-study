@@ -2,7 +2,7 @@ package swea;
 
 import java.util.Scanner;
 
-public class Swea_9229 {
+public class Swea9229 {
 static int n;
 static int m;
 static int[]snack;

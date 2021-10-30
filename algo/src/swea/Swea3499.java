@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Swea_3499 {
+public class Swea3499 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

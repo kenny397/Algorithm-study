@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Swea_1220 {
+public class Swea1220 {
 static int map[][];
 static int n;
 	public static void main(String[] args) throws Exception {

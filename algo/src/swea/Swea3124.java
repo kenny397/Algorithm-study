@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.*;
 import java.util.StringTokenizer;
 
-public class Swea_3124 {
+public class Swea3124 {
 static int[] parent;
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
