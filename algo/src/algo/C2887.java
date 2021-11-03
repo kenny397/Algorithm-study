@@ -29,6 +29,7 @@ public class C2887 {
 			long w=Math.abs(plants[i].x-plants[i+1].x);
 			pq.add(new Node(plants[i].num,plants[i+1].num,w));
 		}
+		
 		Arrays.sort(plants,(p1,p2)->{
 			if(p1.y<p2.y)return -1;
 			else return 1;
@@ -37,6 +38,7 @@ public class C2887 {
 			long w=Math.abs(plants[i].y-plants[i+1].y);
 			pq.add(new Node(plants[i].num,plants[i+1].num,w));
 		}
+		
 		Arrays.sort(plants,(p1,p2)->{
 			if(p1.z<p2.z)return -1;
 			else return 1;

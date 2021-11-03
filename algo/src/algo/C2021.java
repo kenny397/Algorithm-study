@@ -40,18 +40,12 @@ static int max;
 		st=new StringTokenizer(br.readLine());
 		int start=Integer.parseInt(st.nextToken());
 		int end=Integer.parseInt(st.nextToken());
-//		for(ArrayList<Integer> i : nal) {
-//			for(int t : i) {
-//				System.out.print(t);
-//			}
-//			System.out.println();
-//		}
+
 		max=Integer.MAX_VALUE;
 		bfs(start-1, end-1);
 		if(max==Integer.MAX_VALUE)max=-1;
 		System.out.println(max);
-		//1호선list
-		//숫자 하나당연결되어있는 호선? list
+		
 		
 		
 	}
@@ -65,11 +59,8 @@ static int max;
 		}
 		while(!q.isEmpty()) {
 			Node node =q.poll();
-		//	System.out.println(node.des+" "+node.no);
-			
 			for(int i=0; i<nal.get(node.des).size(); i++) {
 				int line=nal.get(node.des).get(i);
-	//			System.out.println(line);
 				if(!v[line]) {
 					v[line]=true;
 					if(al.get(line).contains(end)) {

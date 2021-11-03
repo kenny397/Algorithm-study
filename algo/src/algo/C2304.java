@@ -56,7 +56,6 @@ public class C2304 {
 			
 			
 			if(htemp<warehouse[i].height) {
-			//	System.out.println((idx2-warehouse[i].idx)*htemp);
 	
 				ret+=(idx2-warehouse[i].idx)*htemp;
 				htemp=warehouse[i].height;
