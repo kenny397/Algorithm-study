@@ -23,9 +23,9 @@ static int[] cache;
 			max=Math.max(max, i);
 		}
 		System.out.println(max);
-	}
-	
-	static int dp(int start) {
+		}
+		
+		static int dp(int start) {
 		if(start==n) {
 			return 0;
 		}
@@ -42,5 +42,8 @@ static int[] cache;
 		}
 		return cache[start];
 	}
-
+	class wtf{
+		
+	}
 }
+
