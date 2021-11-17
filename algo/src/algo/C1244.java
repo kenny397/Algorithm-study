@@ -1,58 +1,70 @@
 package algo;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.StringTokenizer;
 
 public class C1244 {
-
-	static int[] switchs;
-	static int n;
-	public static void main(String[] args)  {
+static int[] switches;
+	
+	public static void main(String[] args)  throws Exception{
 		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);
-		n=sc.nextInt();
-		switchs=new int[n+1];
-		for(int i=1; i<=n; i++) {
-			switchs[i]=sc.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int length=Integer.parseInt(br.readLine());
+		switches=new int[length];
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int i=0; i<length; i++) {
+			switches[i]=Integer.parseInt(st.nextToken());
 		}
-		int m=sc.nextInt();
-		for(int i=0; i<m; i++) {
-			operate(sc.nextInt(),sc.nextInt());
-			
+	
+		int n=Integer.parseInt(br.readLine());
+		for(int i=0; i<n; i++) {
+			st=new StringTokenizer(br.readLine());
+			int gender=Integer.parseInt(st.nextToken());
+			int no=Integer.parseInt(st.nextToken());
+			operate(gender,no);
 		}
-		for(int i=1; i<=n; i++) {
-			
-			if(i==n)System.out.print(switchs[i]);
-			else System.out.print(switchs[i]+" ");
-			
-			if(i%20==0)System.out.println();
+		for (int i = 0; i < switches.length; i++) {
+			if(i==switches.length-1) System.out.print(switches[i]);
+			else System.out.print(switches[i]+" ");
+			if(i%20==19) System.out.println();
 		}
 	}
-
-	private static void operate(int gender, int target) {
-		// TODO Auto-generated method stub
-		if(gender==1) {
-			for(int i=1; i<=n; i++) {
-				if(target*i>n)break;
-				if(switchs[target*i]==1)  switchs[target*i]=0; 
-				else switchs[target*i]=1;
+	static void operate(int gender,int no) {
+		if(gender ==1) {
+			for(int i=1; i*no<=switches.length; i++) {
+				if(switches[i*no-1]==0) {
+					switches[i*no-1]=1;
+				}else {
+					switches[i*no-1]=0;
+					
+				}
 			}
 		}
 		if(gender==2) {
-			if(switchs[target]==1)  switchs[target]=0; 
-			else switchs[target]=1;
-			for(int i=1; i<=n; i++) {
-				if(target+i>n||target-i<0)break;
-				if(switchs[target+i]==switchs[target-i]) {
-					if(switchs[target+i]==1)  switchs[target+i]=0; 
-					else switchs[target+i]=1;
-					if(switchs[target-i]==1)  switchs[target-i]=0; 
-					else switchs[target-i]=1;
+			if(switches[no-1]==0) {
+				switches[no-1]=1;
+			}else {
+				switches[no-1]=0;
+			}
+			for(int i=1; i<switches.length; i++) {
+				if(no+i>switches.length||no-i<1)break;
+				if(switches[no+i-1]==switches[no-i-1]) {
+					if(switches[i+no-1]==1) {
+						switches[no+i-1]=0;
+						switches[no-i-1]=0;
+					}else {
+						switches[no+i-1]=1;
+						switches[no-i-1]=1;
+						
+					}
 				}else {
 					break;
 				}
 			}
 		}
-		
 	}
 
+	
 }
