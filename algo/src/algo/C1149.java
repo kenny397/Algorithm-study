@@ -38,17 +38,21 @@ static int[][] home;
 		if(k==0) {
 			return 0;
 		}
+        if(home[k][color]!=Integer.MAX_VALUE)return home[k][color];
 		if(color==0) {
 			
-			home[k][color]=Math.min(dp(k-1,2),dp(k-1,1)+rgb[k][0]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,1)+rgb[k][0]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,2)+rgb[k][0]);
 		}
 		if(color==1) {
 			
-			home[k][color]=Math.min(dp(k-1,2),dp(k-1,0)+rgb[k][1]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,0)+rgb[k][1]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,2)+rgb[k][1]);
 		}
 		if(color==2) {
 			
-			home[k][color]=Math.min(dp(k-1,1),dp(k-1,0)+rgb[k][2]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,0)+rgb[k][2]);
+			home[k][color]=Math.min(home[k][color],dp(k-1,1)+rgb[k][2]);
 		}
 		return home[k][color];
 		
