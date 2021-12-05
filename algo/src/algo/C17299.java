@@ -23,12 +23,15 @@ public class C17299 {
 		int[]answer=new int[n];
 		int[]F=new int[1000001];
 		StringTokenizer token=new StringTokenizer(br.readLine());
+		
 		for(int i=0; i<n; i++) {
 			A[i]=Integer.parseInt(token.nextToken());
 			F[A[i]]++;
 		}
+		
 		Stack<Node>st=new Stack<>();
 		st.add(new Node(0,A[0]));
+		
 		for(int i=1; i<n; i++) {
 			while(!st.isEmpty()&&F[st.peek().val]<F[A[i]]) {
 				answer[st.pop().idx]=A[i];				
@@ -42,8 +45,9 @@ public class C17299 {
 		for(int i=0; i<n; i++) {
 			if(i==n-1) sb.append(answer[i]);
 			else sb.append(answer[i]+" ");
-			
 		}
+		
+		
 		System.out.println(sb.toString());
 		
 	}
